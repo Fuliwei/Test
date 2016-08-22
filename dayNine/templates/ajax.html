@@ -1,0 +1,37 @@
+<html>
+<body>
+<table border='1' id='utable'>
+	<thead>
+		<tr>
+		<td>用户名</td>
+		<td>年  龄</td>
+		<td>操  作</td>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+<script>
+	/*alert("hello")*/
+	$.getJSON('/list',function(data){
+		console.log(data)
+		if (data['code'] == '0'){
+			var str = ""
+			data1 = data['result']
+			str = '<tr>'+
+				  	'<td>'+data1['name']+'</td>'+
+					'<td>'+data1['age']+'</td>'+
+					'<td>'+
+					'<button data-id="' +data1['id'] +'">更新</button>'+
+					'</td>'+'</tr>'
+			$('tbody').html(str)
+		}else{
+			$('#errmsg').html('fail')
+		}
+	})
+</script>
+<body>
+
+</html>
+

@@ -1,0 +1,28 @@
+<html>
+<body>
+<table border='1'>
+	<thead>
+		<tr>
+		<td>用户名</td>
+		<td>年  龄</td>
+		<td>操  作</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if user %}
+	<tr>
+		<td>{{user.name}}</td>
+		<td>{{user.age}}</td>
+		<td><input type="button" name="update"  data-id='{{user.id}}' value="更新"></a></td>
+	</tr>
+	{%endif%}
+	</tbody>
+</table>
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+<script>
+	alert("hello")
+</script>
+<body>
+
+</html>
+
